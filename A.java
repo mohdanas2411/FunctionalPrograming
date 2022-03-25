@@ -1,2 +1,9 @@
-package com.FunctionalInerface;public class A {
+package com.FunctionalInerface;
+
+public class A {
+    public static void main(String[] args) {
+        System.out.println("A");
+    }
 }
+
+
