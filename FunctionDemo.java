@@ -13,5 +13,12 @@ public class FunctionDemo{
         Function<Integer,Integer> f = Function.identity();
         System.out.println(f.apply(1));
 
+
+        System.out.println("custom");
+
+        MyFunctionalInterface<Integer,String,Integer> myfun = (a,b,c,d) -> a+b+c+d;
+
+        System.out.println(myfun.test(1,"hello",3,4));
+
     }
 }

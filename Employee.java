@@ -8,6 +8,11 @@ public class Employee{
         this.salary = salary;
         this.name = name;
     }
+
+    public Employee() {
+        super();
+    }
+
     public void updateSal(double upd){
         this.salary+=upd;
     }

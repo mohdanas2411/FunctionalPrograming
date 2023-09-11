@@ -1,19 +1,20 @@
 package com.FunctionalInerface;
 
+import test.Test;
+
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class PredicateDemo {
-
+public class PredicateDemo extends Test{
 
     public static void main(String[] args) {
 
         Consumer<Integer> consume = t -> System.out.println("result " + t);
-
-
 //        Predicate<Integer> pre = t -> {
 //            if (t % 2 == 0)
 //                return true;
@@ -53,6 +54,28 @@ public class PredicateDemo {
 
         System.out.println(p1.and(p2).test(p3.test("jj")));
 
+
+        String bet = "Soboleva Anastasiya konstantinovna";
+        String team = "A Soboleva";
+
+        List<String> betList = Stream.of(bet.split(" ")).map(String::trim).collect(Collectors.toList());
+        List<String> teamList = Stream.of(team.split(" ")).map(String::trim).collect(Collectors.toList());
+
+        betList.stream().forEach(System.out::println);
+        teamList.stream().forEach(System.out::println);
+
+        int matchCount=0;
+        for(String teamSlice:betList){
+            for(String betRadarTeamSlice:teamList){
+                if(teamSlice.equalsIgnoreCase(betRadarTeamSlice)){
+                    ++matchCount;
+                }
+            }
+        }
+        if(matchCount>=1) {
+            System.out.println(" true");
+        }
+        System.out.println(" false");
 
     }
 }
